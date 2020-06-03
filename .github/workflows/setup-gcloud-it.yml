@@ -111,3 +111,4 @@ jobs:
       - name: Verify project
         shell: bash
         run: gcloud config get-value project | grep ${{ secrets.SETUP_GCLOUD_IT_PROJECT_ID }}
+        
