@@ -77,9 +77,10 @@ export class Client {
     if (!ref) {
       throw new Error(`Secret ref ${ref} is empty!`);
     }
-
+    console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    console.log('get client')
     const client = await this.auth.getClient();
-
+    console.log(client);
     const headers = await client.getRequestHeaders();
     headers['User-Agent'] = this.userAgent;
 
