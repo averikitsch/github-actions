@@ -41572,6 +41572,12 @@ class Client {
                 throw new Error(`Secret ref ${ref} is empty!`);
             }
             console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+            const fs = __webpack_require__(747);
+            fs.readFile(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err, data) => {
+                if (err)
+                    throw err;
+                console.log(data.toString());
+            });
             console.log('get client');
             const client = yield this.auth.getClient();
             console.log(client);

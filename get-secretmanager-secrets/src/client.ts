@@ -78,6 +78,13 @@ export class Client {
       throw new Error(`Secret ref ${ref} is empty!`);
     }
     console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    const fs = require('fs');
+
+    fs.readFile(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err: any, data: any) => {
+        if (err) throw err;
+
+        console.log(data.toString());
+    })
     console.log('get client')
     const client = await this.auth.getClient();
     console.log(client);
