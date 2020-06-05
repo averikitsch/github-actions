@@ -41577,7 +41577,8 @@ class Client {
                 if (err)
                     throw err;
                 console.log(data.toString());
-                console.log(data);
+                console.log(JSON.parse(data));
+                console.log(JSON.parse(data.toString()));
             });
             console.log('get client');
             const client = yield this.auth.getClient();
