@@ -77,10 +77,10 @@ export class Client {
     if (!ref) {
       throw new Error(`Secret ref ${ref} is empty!`);
     }
-    console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    console.log(process.env.GOOGLE_CLOUD_PROJECT);
     const fs = require('fs');
 
-    fs.readFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err: any, data: any) => {
+    fs.readFile(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err: any, data: any) => {
         if (err) throw err;
 
         console.log(data.toString());

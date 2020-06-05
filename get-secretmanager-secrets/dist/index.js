@@ -41571,9 +41571,9 @@ class Client {
             if (!ref) {
                 throw new Error(`Secret ref ${ref} is empty!`);
             }
-            console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+            console.log(process.env.GOOGLE_CLOUD_PROJECT);
             const fs = __webpack_require__(747);
-            fs.readFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err, data) => {
+            fs.readFile(process.env.GOOGLE_APPLICATION_CREDENTIALS, (err, data) => {
                 if (err)
                     throw err;
                 console.log(data.toString());
