@@ -21,6 +21,5 @@ jobs:
         with:
           version: 'latest'
           service_account_key: ${{ secrets.SETUP_GCLOUD_IT_KEY }}
-        run: gcloud compute url-maps list
-      - name: test
-        run: gcloud compute url-maps invalidate-cdn-cache test-balancer --path /* --async
+      - run: gcloud compute url-maps list
+      - run: gcloud compute url-maps invalidate-cdn-cache test-balancer --path /* --async
