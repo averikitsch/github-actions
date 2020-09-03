@@ -1,10 +1,11 @@
-name: setup-gcloud Integration
+name: test
 
 on:
   push:
     paths:
     - '.github/workflows/setup-gcloud*'
 
+jobs:
   latest:
     name: setup-gcloud latest
     runs-on: ${{ matrix.operating-system }}
