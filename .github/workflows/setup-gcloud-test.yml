@@ -1,0 +1,25 @@
+name: setup-gcloud Integration
+
+on:
+  push:
+    paths:
+    - '.github/workflows/setup-gcloud*'
+
+  latest:
+    name: setup-gcloud latest
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup-gcloud
+        uses: ./setup-gcloud/
+        with:
+          version: 'latest'
+          service_account_key: ${{ secrets.SETUP_GCLOUD_IT_KEY }}
+        run: gcloud compute url-maps list
+      - name: test
+        run: gcloud compute url-maps invalidate-cdn-cache test-balancer --path /* --async
