@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - id: deploy
@@ -55,7 +55,7 @@ jobs:
       working-directory: ./deploy-cloudrun
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - name: integration tests
@@ -63,7 +63,7 @@ jobs:
       working-directory: ./deploy-cloudrun
       env:
         URL: ${{ steps.deploy.outputs.url }}
-        GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
+        # GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
 
   json:
     name: with json creds
@@ -83,7 +83,7 @@ jobs:
       working-directory: ./deploy-cloudrun
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - name: integration tests
@@ -91,7 +91,7 @@ jobs:
       working-directory: ./deploy-cloudrun
       env:
         URL: ${{ steps.deploy.outputs.url }}
-        GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
+        # GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
 
   envVars:
     name: with Env Vars
@@ -112,7 +112,7 @@ jobs:
       working-directory: ./deploy-cloudrun
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - name: integration tests
@@ -120,7 +120,7 @@ jobs:
       working-directory: ./deploy-cloudrun
       env:
         URL: ${{ steps.deploy.outputs.url }}
-        GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
+        # GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
 
   yaml:
     name: with YAML metadata
@@ -139,7 +139,7 @@ jobs:
       working-directory: ./deploy-cloudrun
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - name: integration tests
@@ -147,7 +147,7 @@ jobs:
       working-directory: ./deploy-cloudrun
       env:
         URL: ${{ steps.deploy.outputs.url }}
-        GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
+        # GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
 
   metadata:
     name: with full YAML metada
@@ -166,7 +166,7 @@ jobs:
       working-directory: ./deploy-cloudrun
     - uses: ./setup-gcloud # Set up ADC to make authenticated request to service # Set up ADC to make authenticated request to service
       with:
-        service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
+        # service_account_email: ${{ secrets.DEPLOY_CLOUDRUN_SA_EMAIL }}
         service_account_key: ${{ secrets.DEPLOY_CLOUDRUN_SA_KEY_B64 }}
         export_default_credentials: true
     - name: integration tests
@@ -174,4 +174,4 @@ jobs:
       working-directory: ./deploy-cloudrun
       env:
         URL: ${{ steps.deploy.outputs.url }}
-        GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
+        # GCLOUD_PROJECT: ${{ secrets.DEPLOY_CLOUDRUN_PROJECT_ID }}
