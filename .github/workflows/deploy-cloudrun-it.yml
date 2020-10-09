@@ -3,11 +3,12 @@ name: deploy-cloudrun Integration
 on:
   push:
     paths:
-    - 'deploy-cloudrun/**'
-    - '.github/workflows/*'
+    - "deploy-cloudrun/**"
+    - ".github/workflows/deploy-cloudrun-it.yml"
   pull_request:
     paths:
-    - 'deploy-cloudrun/**'
+    - "deploy-cloudrun/**"
+    - ".github/workflows/deploy-cloudrun-it.yml"
 
 jobs:
   envVars:
