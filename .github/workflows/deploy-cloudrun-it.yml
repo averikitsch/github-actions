@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'deploy-cloudrun/**'
+    - '.github/workflows/deploy-cloudrun-it.yml'
   pull_request:
     paths:
     - 'deploy-cloudrun/**'
